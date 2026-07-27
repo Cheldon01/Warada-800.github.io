@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>Paint Program</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="paint-container">
+
+    <div class="header">
+        <h1>Paint Program</h1>
+    </div>
+
+    <div class="main">
+
+        <div class="toolbar">
+
+            <h3>Tools</h3>
+
+            <button class="tool-button active"
+                    onclick="selectTool('pencil', this)">
+                ✏️ Pencil
+            </button>
+
+            <button class="tool-button"
+                    onclick="selectTool('line', this)">
+                ➖ Line
+            </button>
+
+            <button class="tool-button"
+                    onclick="selectTool('rect', this)">
+                ⬜ Rectangle
+            </button>
+
+            <button class="tool-button"
+                    onclick="selectTool('circle', this)">
+                ⚪ Circle
+            </button>
+
+            
+            <button class="tool-button"
+                    onclick="toggleFill(this)">
+                ⬛ Fill : OFF
+            </button>
+
+
+            <button class="tool-button"
+                    onclick="selectTool('eraser', this)">
+                🧼 Eraser
+            </button>
+
+
+            <h3 class="color-area">Color</h3>
+            
+            <div class="color-buttons">
+                <button class="color-button red active"
+                        onclick="selectColor('#ff0000', this)">
+                </button>
+            
+                <button class="color-button green"
+                        onclick="selectColor('#00aa00', this)">
+                </button>
+            
+                <button class="color-button blue"
+                        onclick="selectColor('#0000ff', this)">
+                </button>
+            
+                <button class="color-button black"
+                        onclick="selectColor('#000000', this)">
+                </button>
+            </div>
+
+
+            <h3 class="width-area">Line Width</h3>
+
+            <input type="range"
+                   id="widthSlider"
+                   min="1"
+                   max="30"
+                   value="5">
+
+            <span id="widthValue">5 px</span>
+
+
+            <button class="clear-button"
+                    onclick="clearCanvas()">
+                Clear Canvas
+            </button>
+
+        </div>
+
+
+        <div class="canvas-area">
+
+            <canvas id="canvas"
+                    width="800"
+                    height="550">
+            </canvas>
+
+            <div class="description">
+                Select a tool and drag your mouse on the canvas.
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
